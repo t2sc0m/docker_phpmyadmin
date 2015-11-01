@@ -1,7 +1,7 @@
 FROM php:5.6-apache
 MAINTAINER tescom <tescom@atdt01410.com>
 
-# Set desired phpMyAdmin version
+# Set phpMyAdmin version
 RUN PHPMYADMIN_VERSION=4.4.14.1 && \
 
 # Install PHP Extensions
