@@ -5,17 +5,17 @@
 ---
 ## IMAGE FROM
 php:5.6-apache
----
+
 ## VERSION
 * PHPMYADMIN 4.4
 * PHP 5.6
 * APACHE 2.2
----
+   
 ## Volume Information
 ```shell
 /var/www/html
 ```
----
+   
 
 ## USAGE
 ---
