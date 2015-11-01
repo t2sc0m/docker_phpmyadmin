@@ -17,4 +17,4 @@ RUN PHPMYADMIN_VERSION=4.4.14.1 && \
 COPY .htaccess /var/www/html/.htaccess
 COPY config.inc.php /var/www/html/config.inc.php
 
-VOLUME /var/www/html
+VOLUME ["/var/www/html"]
