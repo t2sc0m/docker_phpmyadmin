@@ -1,6 +1,7 @@
 FROM php:5.6-apache
 MAINTAINER tescom <tescom@atdt01410.com>
 
+USER root
 # Set phpMyAdmin version
 RUN PHPMYADMIN_VERSION=4.4.14.1 && \
 
@@ -15,11 +16,13 @@ RUN PHPMYADMIN_VERSION=4.4.14.1 && \
     rm -rf sql && \
 
 # create share directory
-    mkdir /data
+    mkdir /data && \
+    chown www-data:www-data /data -R && \
+    chmod 755 /data
 
 COPY .htaccess /var/www/html/.htaccess
 COPY config.inc.php /data/config.inc.php
 
-RUN ln -s /data/config.inc.php /var/www/html/config.inc.php
+RUN ln -s /data/config.inc.php /var/www/html/config.inc.php 
 
 VOLUME ["/data"]
