@@ -21,8 +21,9 @@ RUN PHPMYADMIN_VERSION=4.4.14.1 && \
     chmod 755 /data
 
 COPY .htaccess /var/www/html/.htaccess
-COPY config.inc.php /data/config.inc.php
+COPY config.inc.php /var/www/html/config.inc.php
 
-RUN ln -s /data/config.inc.php /var/www/html/config.inc.php 
+RUN mv /var/www/html/config.inc.php /data/
+    ln -s /data/config.inc.php /var/www/html/config.inc.php 
 
 VOLUME ["/data"]
