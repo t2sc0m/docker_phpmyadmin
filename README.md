@@ -13,7 +13,7 @@ php:5.6-apache
    
 ## Volume Information
 ```shell
-/var/www/html
+/data
 ```
    
 

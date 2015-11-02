@@ -12,9 +12,14 @@ RUN PHPMYADMIN_VERSION=4.4.14.1 && \
     rm -rf phpMyAdmin* && \
     rm -rf examples && \
     rm -rf setup && \
-    rm -rf sql
+    rm -rf sql && \
+
+# create share directory
+    mkdir /data
 
 COPY .htaccess /var/www/html/.htaccess
-COPY config.inc.php /var/www/html/config.inc.php
+COPY config.inc.php /data/config.inc.php
 
-VOLUME ["/var/www/html"]
+RUN ln -s /data/config.inc.php /var/www/html/config.inc.php
+
+VOLUME ["/data"]
