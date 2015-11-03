@@ -34,7 +34,10 @@ $ sudo docker run --link mysql:mysql \
 ---
 ### With MariaDB Container
 ```shell
+#### Run MariaDB Container
 $ sudo docker run --name mariadb -e MYSQL_ROOT_PASSWORD=${my_password} -d mariadb
+
+#### Run phpMyAdmin Container
 $ sudo docker run --link mariadb:mysql \
                   -v ${local_share_directory}:/etc/phpmyadmin \
                   -p ${your_port}:80 adite/phpmyadmin
