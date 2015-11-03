@@ -8,4 +8,7 @@ RUN apt-get update && \
 ADD default-vhost.conf /etc/apache2/sites-available/000-default.conf
 ADD config-db.php /etc/phpmyadmin/config-db.php
 
-VOLUME ["/etc/phpmyadmin"]
+VOLUME ["/data"]
+
+RUN mv /etc/phpmyadmin/config-db.php /data/ && \
+    ln -s /data/config-db.php /etc/phpmyadmin/config-db.php

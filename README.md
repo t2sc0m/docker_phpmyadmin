@@ -19,7 +19,7 @@ adite/apache-php
 
 ## Volume Information
 ```shell
-/etc/phpmyadmin
+/data
 ```
 
 ## USAGE
