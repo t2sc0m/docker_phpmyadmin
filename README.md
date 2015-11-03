@@ -26,7 +26,10 @@ adite/apache-php
 ---
 ### With Mysql Container
 ```shell
+#### Run Mysql Container
 $ sudo docker run --name mysql -e MYSQL_ROOT_PASSWORD=${my_password} -d mysql
+
+#### Run phpMyAdmin Container
 $ sudo docker run --link mysql:mysql \
                   -v ${local_share_directory}:/etc/phpmyadmin \
                   -p ${your_port}:80 adite/phpmyadmin
