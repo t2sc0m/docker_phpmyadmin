@@ -8,7 +8,8 @@ RUN apt-get update && \
 ADD default-vhost.conf /etc/apache2/sites-available/000-default.conf
 ADD config-db.php /etc/phpmyadmin/config-db.php
 
-VOLUME ["/data"]
+ADD run.sh /run.sh
+RUN chmod +x /run.sh
 
-RUN mv /etc/phpmyadmin/config-db.php /data/ && \
-    ln -s /data/config-db.php /etc/phpmyadmin/config-db.php
+VOLUME ["/data"]
+ENTRYPOINT ["/run.sh"]
