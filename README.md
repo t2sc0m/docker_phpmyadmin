@@ -31,7 +31,7 @@ $ sudo docker run --name mysql -e MYSQL_ROOT_PASSWORD=${my_password} -d mysql
 
 #### Run phpMyAdmin Container
 $ sudo docker run --link mysql:mysql \
-                  -v ${local_share_directory}:/etc/phpmyadmin \
+                  -v ${local_share_directory}:/data \
                   -p ${your_port}:80 adite/phpmyadmin
 ```
 ---
@@ -42,7 +42,7 @@ $ sudo docker run --name mariadb -e MYSQL_ROOT_PASSWORD=${my_password} -d mariad
 
 #### Run phpMyAdmin Container
 $ sudo docker run --link mariadb:mysql \
-                  -v ${local_share_directory}:/etc/phpmyadmin \
+                  -v ${local_share_directory}:/data \
                   -p ${your_port}:80 adite/phpmyadmin
 ```
 ---
@@ -52,7 +52,7 @@ $ sudo docker run -e DB_HOST=${your_db_hostname_or_ip} \
                      DB_PORT=${your_db_port} \
                      DB_USER=${your_db_user} \
                      DB_PASSWORD=${your_db_user_password} \
-                  -v ${local_share_directory}:/etc/phpmyadmin \
+                  -v ${local_share_directory}:/data \
                   -p ${your_port}:80 adite/phpmyadmin
 ```
 ---
