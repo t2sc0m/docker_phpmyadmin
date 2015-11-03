@@ -7,7 +7,7 @@
 adite/apache-php
 
 ## VERSION
-* PHPMYADMIN 4.4
+* PHPMYADMIN 4.5
 * PHP 5.5.9
 * APACHE 2.4.7
 
