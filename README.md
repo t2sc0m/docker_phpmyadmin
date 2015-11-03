@@ -26,14 +26,18 @@ adite/apache-php
 ---
 ### With Mysql Container
 ```shell
-$ sudo docker run --name mysql -e MYSQL_ROOT_PASSWORD=my_password -d mysql
-$ sudo docker run --link mysql:mysql -v ${local_share_directory}:/etc/phpmyadmin -p ${your_port}:80 adite/phpmyadmin
+$ sudo docker run --name mysql -e MYSQL_ROOT_PASSWORD=${my_password} -d mysql
+$ sudo docker run --link mysql:mysql \
+                  -v ${local_share_directory}:/etc/phpmyadmin \
+                  -p ${your_port}:80 adite/phpmyadmin
 ```
 ---
 ### With MariaDB Container
 ```shell
-$ sudo docker run --name mariadb -e MYSQL_ROOT_PASSWORD=my_password -d mariadb
-$ sudo docker run --link mariadb:mysql -v ${local_share_directory}:/etc/phpmyadmin -p ${your_port}:80 adite/phpmyadmin
+$ sudo docker run --name mariadb -e MYSQL_ROOT_PASSWORD=${my_password} -d mariadb
+$ sudo docker run --link mariadb:mysql \
+                  -v ${local_share_directory}:/etc/phpmyadmin \
+                  -p ${your_port}:80 adite/phpmyadmin
 ```
 ---
 * If you connect remote mysql/mariadb, edit config.inc.php in your local volume.
