@@ -46,5 +46,15 @@ $ sudo docker run --link mariadb:mysql \
                   -p ${your_port}:80 adite/phpmyadmin
 ```
 ---
+### Connect Remote/Local Database
+```shell
+$ sudo docker run -e DB_HOST=${your_db_hostname_or_ip} \
+                     DB_PORT=${your_db_port} \
+                     DB_USER=${your_db_user} \
+                     DB_PASSWORD=${your_db_user_password} \
+                  -v ${local_share_directory}:/etc/phpmyadmin \
+                  -p ${your_port}:80 adite/phpmyadmin
+```
+---
 * If you connect remote mysql/mariadb, edit config.inc.php in your local volume.
 * When a mysql/mariadb container is linked at port 3306 with alias "db" all the variabeles are automatically configured.
