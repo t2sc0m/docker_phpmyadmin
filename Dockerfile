@@ -9,7 +9,7 @@ ADD default-vhost.conf /etc/apache2/sites-available/000-default.conf
 ADD config-db.php /etc/phpmyadmin/config-db.php
 
 ADD run.sh /run.sh
-#RUN chmod +x /run.sh
+RUN chmod +x /run.sh
 
 VOLUME ["/data"]
 ENTRYPOINT ["/run.sh"]
