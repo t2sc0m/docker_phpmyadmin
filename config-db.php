@@ -1,11 +1,11 @@
 <?php
-$dbuser=getenv('DB_ENV_MYSQL_USER') ? :	 	 # https://registry.hub.docker.com/u/tutum/mysql/
-	    getenv('DB_USER') ? :			 # manual
+$dbuser=getenv('DB_ENV_MYSQL_USER') ? :
+	    getenv('DB_USER') ? :
 	    'root';
-$dbpass=getenv('DB_ENV_MYSQL_ROOT_PASSWORD') ? : # https://registry.hub.docker.com/_/mysql/
-        getenv('DB_ENV_MYSQL_PASS') ? : 	 # https://registry.hub.docker.com/u/tutum/mysql/
-	    getenv('DB_ENV_MARIADB_PASS') ? :        # https://registry.hub.docker.com/u/tutum/mariadb/
-	    getenv('DB_PASSWORD');                   # manual
+$dbpass=getenv('DB_ENV_MYSQL_ROOT_PASSWORD') ? :
+        getenv('DB_ENV_MYSQL_PASS') ? :
+	    getenv('DB_ENV_MARIADB_PASS') ? :
+	    getenv('DB_PASSWORD');
 $basepath='';
 $dbname='phpmyadmin';
 if (preg_match('@^tcp://([\d.]+):(\d+)$@', getenv('DB_PORT'), $m)) {
