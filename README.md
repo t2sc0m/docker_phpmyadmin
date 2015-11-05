@@ -17,11 +17,6 @@ adite/apache-php
 * DB_USER       : DB User Name
 * DB_PASSWORD   : DB User Password
 
-## Volume Information
-```shell
-/data
-```
-
 ## USAGE
 ---
 ### With Mysql Container
@@ -56,5 +51,5 @@ $ sudo docker run -e DB_HOST=${your_db_hostname_or_ip} \
                   -p ${your_port}:80 adite/phpmyadmin
 ```
 ---
-* If you connect remote mysql/mariadb, edit config-db.php in your local volume.
+* If you connect another mysql/mariadb, edit /etc/phpmyadmin/config-db.php in your container.
 * When a mysql/mariadb container is linked at port 3306 with alias "db" all the variabeles are automatically configured.
