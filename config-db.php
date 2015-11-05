@@ -17,9 +17,8 @@ if (preg_match('@^tcp://([\d.]+):(\d+)$@', getenv('DB_PORT'), $m)) {
 }
 $dbtype='mysql';
 
-// add settings
+// add /etc/phpmyadmin/config.inc.php sample settings
 /*
-  $i=1;
   $i++;
   $cfg['Servers'][$i]['auth_type'] = 'cookie';
   $cfg['Servers'][$i]['verbose'] = 'db_server_alias';
